@@ -1,6 +1,7 @@
 ﻿/* Простые селекторы*/
 body {
     background-color: #f5f3b5;
+    
 }
 
 .video-container {
@@ -61,6 +62,7 @@ aside {
     overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
     padding-top: 2%;
     font-size: large;
+    margin-right: 1%;
 }
 
 body {

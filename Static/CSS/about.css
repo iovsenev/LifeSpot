@@ -1,0 +1,25 @@
+.description-content{
+    padding: 1%;
+}
+
+.about_title{
+    padding-left: 2%;
+}
+
+.about-Link{
+    color: blue;
+}
+
+.reviews,.review-button{
+    display: inline-block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+.review-text{
+    display: block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
+}
