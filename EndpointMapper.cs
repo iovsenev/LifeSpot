@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using System.IO;
-using System.Reflection.PortableExecutable;
 using System.Text;
 
 namespace LifeSpot
@@ -11,7 +10,7 @@ namespace LifeSpot
     {
         public static void MapCss(this IEndpointRouteBuilder builder)
         {
-            var classFiles = new[] { "index.css", "slider.css", "slider2.css" };
+            var classFiles = new[] { "index.css", "about.css", "slider.css", "slider2.css" };
             foreach (var file in classFiles)
             {
                 builder.MapGet($"/Static/CSS/{file}",
@@ -26,7 +25,7 @@ namespace LifeSpot
 
         public static async void MapJs(this IEndpointRouteBuilder builder)
         {
-            var classFile = new[] { "index.js", "testing.js", "about.js" };
+            var classFile = new[] { "index.js", "testing.js", "about.js", "slider.js" };
             foreach (var file in classFile)
             {
                 builder.MapGet($"/Static/JS/{file}",
@@ -105,7 +104,6 @@ namespace LifeSpot
                     //var img = await File.ReadAllBytesAsync(imgPath);
                     await context.Response.Body.WriteAsync(await File.ReadAllBytesAsync(imgPath));
                 });
-
             }
         }
     }

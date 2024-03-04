@@ -1,67 +1,45 @@
-/* .slider {
+.slider-container {
 	position: relative;
-	width: 200px;
-	height: 200px;
-	margin: 50px auto 0;
-	
-	user-select: none;
-	
-	touch-action: pan-y;
-}
-
-
-
-.slider img {
-	poiner-events: none;
-}
-
-.slider-list {
-	width: 200px;
-	height: 200px;
+	width: 600px;
+	height: 400px;
+	margin: 0;
 	overflow: hidden;
 }
 
-.slider-list.grab {
-	cursor: grab;
-}
-
-.slider-list.grabbing {
-	cursor: grabbing;
-}
-
-.slider-track {
+.slider {
 	display: flex;
+	transition: transform 0.5s ease-in-out;
 }
 
-.slide {
-	width: 200px;
-	height: 200px;
-	
-	flex-shrink: 0;
-	
-	font-size: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 1px solid #000;
+.slider img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-.slider-arrows {
-	margin-top: 15px;
-	text-align: center;
-}
-
-.next,
-.prev {
-	background: none;
+.prev-button,
+.next-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 50px;
+	background-color: transparent;
 	border: none;
-	margin: 0 10px;
-	font-size: 30px;
-	cursor: pointer;
+	font-size: 24px;
+	color: white;
 }
 
-.next.disabled,
-.prev.disabled {
-	opacity: 0.25;
-	pointer-events: none;
-} */
+.prev-button {
+	left: 10px;
+}
+
+.next-button {
+	right: 10px;
+}
+
+.slider-container .controls {
+	left: 50%;
+	margin-left: -98px;
+	position: absolute;
+}

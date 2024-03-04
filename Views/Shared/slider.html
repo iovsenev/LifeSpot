@@ -1,22 +1,18 @@
-<div class="slider">
-	<div class="slider-list">
-		<div class="slider-track">
-			<div class="slide">
-				<img src="../../Static/img/slider/london.jpg" alt="london" />
-			</div>
-			<div class="slide">
-				<img src="../../Static/img/slider/ny.jpg" alt="new york" />
-			</div>
-			<div class="slide">
-				<img
-					src="../../Static/img/slider/spb.jpg"
-					alt="sankt-piterburg"
-				/>
-			</div>
-		</div>
+<div class="slider-container">
+	<div class="slider">
+		<img
+			id="slide1"
+			src="../../Static/img/slider/london.jpg"
+			alt="London"
+		/>
+		<img id="slide2" src="../../Static/img/slider/ny.jpg" alt="New Yourk" />
+		<img id="slide3" src="../../Static/img/slider/spb.jpg" alt="SPB" />
 	</div>
-	<div class="slider-arrows">
-		<button type="button" class="prev">&larr;</button>
-		<button type="button" class="next">&rarr;</button>
-	</div>
+	<button class="prev-button" aria-label="Посмотреть предыдущий слайд">
+		&lt;
+	</button>
+	<button class="next-button" aria-label="Посмотреть следующий слайд">
+		&gt
+	</button>
 </div>
+<script src="../Static/JS/slider.js"></script>
