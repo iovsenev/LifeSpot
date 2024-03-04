@@ -1,5 +1,9 @@
-let name = prompt('enter your name:');
-alert(`hello ${name} in your name ${name.length} chars`);
+const saveInput = function () {
+    let currentInput =
+        document.getElementsByTagName('input')[0].value.toLowerCase();
 
-let countElements = document.getElementsByTagName('*');
-alert(`in your page ${countElements.length} tagElements`);
+    alert('Последний ввод: ' +
+        this.lastInput + '\nТекущий ввод: ' + currentInput);
+
+    this.lastInput = currentInput;
+}

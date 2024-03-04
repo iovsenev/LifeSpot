@@ -1,15 +1,32 @@
-﻿let session = new Map();
+﻿// let session = {
+//   startDate: new Date().toLocaleString(),
+//   userAgent: window.navigator.userAgent,
+//   userAge: prompt('Введите ваш возраст')
+// }
 
-function handleSession() {
-  session.set("startDate", new Date().toLocaleString());
-  session.set("userAgent", window.navigator.userAgent);
+function handleSession(logger, checker) {
+  if (window.sessionStorage.getItem("startDate") == null) {
+    window.sessionStorage.setItem("startDate", new Date().toLocaleString());
+  }
+  if (window.sessionStorage.getItem("userAgent") == null) {
+    window.sessionStorage.setItem("userAgent",
+      window.navigator.userAgent);
+  }
+  if (window.sessionStorage.getItem("userAge") == null) {
+    let input = prompt('Введите ваш возраст: ');
+    window.sessionStorage.setItem("userAge", input);
+    checkUserAge(true);
+  } else {
+    checkUserAge(false)
+  }
+  logger();
 }
-function checkUserAge() {
-  session.set("age", prompt("Пожалуйста, введите ваш возраст?"));
-  // Проверка на возраст и сохранение сессии
-  if (session.get("age") >= 18) {
-    let startDate = new Date().toLocaleString();
-    alert("Приветствуем на LifeSpot! " + "\n" + "Текущее время: " + startDate);
+
+function checkUserAge(newVisit) {
+  if (window.sessionStorage.getItem("userAge") >= 18) {
+    if (newVisit) {
+      alert("Приветствуем на LifeSpot! " + "\n" + "Текущее время: " + startDate);
+    }
   }
   else {
     alert(
@@ -17,6 +34,7 @@ function checkUserAge() {
     );
     window.location.href = "http://www.google.com";
   }
+
 }
 
 function searchVideo() {
@@ -33,10 +51,10 @@ function searchVideo() {
   }
 }
 
-let sessionLog = function () {
-  for (let result of session) {
-    console.log(result);
-  }
+let logger = function () {
+  console.log('Дата старта: ' + window.sessionStorage.getItem("startDate"));
+  console.log('Данные пользователя: ' + window.sessionStorage.getItem("userAgent"));
+  console.log('Возраст пользователя: ' + window.sessionStorage.getItem("userAge"));
 }
 
 setTimeout(() =>
